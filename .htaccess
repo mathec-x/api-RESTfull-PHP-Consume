@@ -1,0 +1,22 @@
+<files "index.php">
+AcceptPathInfo on
+</files>
+#Disable all directory views (recommended for better security)
+Options -Indexes
+#Disable multi-views (recommended for canonical URIs)
+Options -MultiViews
+#Enable symlinks (required for permalinks/rewrites, e.g., index.php → index.html)
+Options +FollowSymlinks
+#ServerSignature Off
+ServerSignature Off
+#Disables the ETag Header (recommended for performance)
+FileETag none
+<FilesMatch "\.(htaccess|htpasswd|ini|log|sh|inc|bak)$">
+Order Allow,Deny
+Deny from all
+</FilesMatch>
+<IfModule mod_headers.c>
+	Header unset ETag
+</IfModule>
+
+
